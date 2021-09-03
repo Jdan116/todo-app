@@ -1,19 +1,39 @@
+
+####### - With In memory DB #########
+
+#server:
+#  port: 8080
+#spring:
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  datasource:
+#    url: jdbc:h2:mem:todoDb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password:
+#  h2:
+#    console:
+#      enabled: true
+#  liquibase:
+#    change-log: classpath:/db/changelog/changelog-master.xml
+#    enabled: true
+#    url: jdbc:h2:mem:todoDb
+#    user: sa
+#    password:
+
+
+####### - With MySql DB #########
 server:
   port: 8080
 spring:
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
   datasource:
-    url: jdbc:h2:mem:todoDb
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
-  h2:
-    console:
-      enabled: true
+    url: jdbc:mysql://localhost/todoDb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: P@ssw0rd
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
     enabled: true
-    url: jdbc:h2:mem:todoDb
-    user: sa
-    password:
+    url: jdbc:mysql://localhost/todoDb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    user: root
+    password: P@ssw0rd
