@@ -13,7 +13,9 @@ The api is containerized so that it could easily be tested on docker.
 * cd to the project director: `cd todo-app`
 * execute mvn build: `mvn clean install` 
 
-## Build docker image and tun
+## Build docker image and run with in memory database
+
+* Make sure memory database configuration is uncommented on application.yml file
 
 * build docker image
 
@@ -22,6 +24,14 @@ The api is containerized so that it could easily be tested on docker.
 * Start the container from the image created previously
     
   * `docker run -p 8080:8080 todo-app`
+
+
+
+## Run docker compose [with MySql database]
+
+* Make sure mysql database configuration is uncommented on application.yml file
+
+* run: docker-compose up
   
 ## Reaching the application
 
